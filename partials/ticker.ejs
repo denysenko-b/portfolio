@@ -1,0 +1,34 @@
+<%
+    const minLength = 100;
+
+    var classes = {
+        container: '',
+        content: '',
+        element: '',
+        item: '',
+        ...classes
+    };
+
+    const length = items.join('').length;
+
+    if (length < minLength) {
+        let tmp = [];
+        const size = Math.ceil(minLength/length);
+        for (let i = 0; i < size; i++) tmp.push(items);
+
+        var items = tmp.flat(Infinity);
+    }
+
+    var tickerBody = items.map(item => `
+        <div class="ticker__item ${classes.item}">
+            <span>${item}</span>
+        </div>
+        `).join('')
+%>
+
+<div class="ticker <%= classes.container %>">
+    <div class="ticker__content <%= classes.content %>">
+        <div class="ticker__element ticker__main <%= classes.element %>" ><%- tickerBody %></div>
+        <div class="ticker__element ticker__ghost <%= classes.element %>"><%- tickerBody %></div>
+    </div>
+</div>

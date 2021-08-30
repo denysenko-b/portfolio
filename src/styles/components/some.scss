@@ -1,0 +1,81 @@
+h1,
+h2,
+h3,
+a,
+button,
+.big-text,
+p,
+li {
+    line-height: 130%;
+    text-transform: uppercase;
+    color: $white;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 5.1875rem;
+    line-height: 100%;
+}
+
+h2,
+.big-text {
+    font-size: 3rem;
+}
+
+h1,
+h2,
+p,
+li {
+    font-family: "Druk Cyr";
+    letter-spacing: 0.04em;
+    font-weight: 900;
+}
+
+li {
+    line-height: 160%;
+}
+
+strong,
+i {
+    color: $yellow;
+}
+
+section {
+    padding: 1.25rem 2.25rem;
+}
+
+button {
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: $yellow;
+    border-radius: 50%;
+
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+
+    background-image: url(../assets/images/arrow.svg);
+    background-position: center;
+    background-size: 40% 40%;
+    background-repeat: no-repeat;
+
+    // &::after {
+    //     content: '';
+    //     display: block;
+    //     background-image: url(../assets/images/arrow.svg);
+    //     background-position: center;
+    //     background-size: 40% 40%;
+    //     background-repeat: no-repeat;
+    //     width: 100%;
+    //     height: 100%;
+    // }
+
+    &.right {
+        transform: rotate(-90deg);
+
+        &.top {
+
+        }
+    }
+}

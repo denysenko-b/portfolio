@@ -1,0 +1,31 @@
+.about {
+    &__ticker {
+        transform: rotate(-2deg);
+
+        margin: 4rem 0;
+    }
+
+    & {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__text {
+        margin-bottom: 1.25rem;
+    }
+
+    &__hello,
+    &__currently {
+        width: 50%;
+    }
+
+    &__hello,
+    &__hobbies {
+        align-self: flex-end;
+    }
+
+    &__hobbies {
+        width: 85%;
+        margin-bottom: 0;
+    }
+}

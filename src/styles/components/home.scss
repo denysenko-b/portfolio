@@ -1,0 +1,97 @@
+.home {
+    --title-offset: 20%;
+    --textset-duration: 10s;
+
+    position: relative;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+
+        .email {
+            a {
+                font-family: Montserrat;
+                line-height: 160%;
+                font-weight: bold;
+                font-size: 0.4375rem;
+            }
+        }
+
+        margin-bottom: 2rem;
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+
+        & > span {
+            display: inline-block;
+
+            margin-bottom: 0.25rem;
+
+            &:nth-child(2) {
+                margin-left: 50%;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+                margin-left: var(--title-offset);
+            }
+        }
+
+        .set-text {
+            display: inline-flex;
+            flex-direction: column;
+            height: 1em;
+            overflow-y: hidden;
+            padding-left: 1em;
+            margin-left: -1em;
+
+            will-change: transform;
+
+            & > * {
+                display: inline-block;
+
+                &:first-child {
+                    animation: settext__slide var(--textset-duration)
+                        alternate infinite;
+                }
+
+                &:last-child {
+                    animation: settext__slide var(--textset-duration)
+                        alternate infinite;
+                }
+            }
+
+            @keyframes settext__slide {
+                0% {
+                    transform: translateY(0);
+                }
+
+                45% {
+                    transform: translateX(0);
+                }
+
+                55% {
+                    transform: translateY(-100%);
+                }
+
+                100% {
+                    transform: translateY(-100%);
+                }
+            }
+        }
+    }
+
+    &__about {
+        width: 24%;
+
+        margin-top: -9.9rem;
+        margin-left: var(--title-offset);
+        opacity: .9;
+    }
+
+    button.down {
+        margin-top: 3.5rem;
+    }
+}
