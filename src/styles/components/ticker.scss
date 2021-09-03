@@ -11,6 +11,16 @@
     display: flex;
     align-items: center;
 
+
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+
+    &:first-child,
+    &:last-child {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
     &__item {
         font-family: "Montserrat";
         color: $black;

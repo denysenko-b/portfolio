@@ -1,8 +1,6 @@
 .about {
     &__ticker {
         transform: rotate(-2deg);
-
-        margin: 4rem 0;
     }
 
     & {
@@ -25,7 +23,7 @@
     }
 
     &__hobbies {
-        width: 85%;
+        width: calc(100% - #{$left-offset});
         margin-bottom: 0;
     }
 }
