@@ -41,41 +41,31 @@ i {
 }
 
 section {
-    padding: 1.25rem 2.25rem;
+    padding: $margin-top $margin-left;
 }
 
-button {
-    width: 2.25rem;
-    height: 2.25rem;
-    background-color: $yellow;
-    border-radius: 50%;
+.stroke-hover {
+    &:hover {
+        -webkit-text-stroke: 2px $black;
+        color: transparent;
+    }
+}
 
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
+.stroke-hover-ch {
+    &:hover {
+        & > span,
+        & > i,
+        & > strong {
+            -webkit-text-stroke: 2px $black;
+            color: transparent;
+        }
 
-
-    background-image: url(../assets/images/arrow.svg);
-    background-position: center;
-    background-size: 40% 40%;
-    background-repeat: no-repeat;
-
-    // &::after {
-    //     content: '';
-    //     display: block;
-    //     background-image: url(../assets/images/arrow.svg);
-    //     background-position: center;
-    //     background-size: 40% 40%;
-    //     background-repeat: no-repeat;
-    //     width: 100%;
-    //     height: 100%;
-    // }
-
-    &.right {
-        transform: rotate(-90deg);
-
-        &.top {
-
+        & > .arrow-pointer {
+            background-color: $yellow;
+            border: 2px solid $black;
+            &::after {
+                background-image: url(../assets/images/arrow.svg);
+            }
         }
     }
 }

@@ -1,0 +1,46 @@
+.arrow-pointer {
+    $size: 2.25rem;
+
+    display: block;
+    width: $size;
+    height: $size;
+    background-color: $yellow;
+    border-radius: 50%;
+
+    // background-image: url(../assets/images/arrow.svg);
+    // background-position: center;
+    // background-size: 40% 40%;
+    // background-repeat: no-repeat;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        background-image: url(../assets/images/arrow.svg);
+        background-position: center;
+        background-size: 40% 40%;
+        background-repeat: no-repeat;
+    }
+
+    &__black {
+        background-color: $black;
+
+        &::after {
+            background-image: url(../assets/images/arrow-yellow.svg);
+        }
+    }
+
+    &__right {
+        &::after {
+            transform: rotate(-90deg);
+        }
+    }
+
+    &__45 {
+        &::after {
+            transform: rotate(-135deg);
+        }
+    }
+}
