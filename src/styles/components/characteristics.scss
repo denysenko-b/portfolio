@@ -1,9 +1,8 @@
 .characteristics {
     $star-size: 0.75em;
+    padding: $margin-top 0;
 
     &__ticker {
-        margin-top: 4rem;
-        margin-bottom: 4rem;
         transform: rotate(-1deg);
     }
 
@@ -13,13 +12,14 @@
 
         margin-bottom: 3rem;
 
-        button {
+        .arrow-pointer {
             margin-top: 0.5rem;
+            margin-left: $margin-left;
         }
 
         h2 {
             line-height: 100%;
-            margin-left: -25%;
+            // position: absolute;
         }
 
         &:last-child {
@@ -39,10 +39,9 @@
                 width: $star-size;
                 height: $star-size;
 
-                background-color: red;
-                mask: url(../assets/images/star.svg);
-
-                // background-image: url(../assets/images/star.svg);
+                background-image: url(../assets/images/star-yellow.svg);
+                margin-top: 0.1rem;
+                background-size: contain;
             }
         }
     }
