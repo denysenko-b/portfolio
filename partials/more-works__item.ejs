@@ -1,0 +1,16 @@
+<%
+    var type = type || 'projects'
+%>
+
+<div class="more-works__item text stroke-hover">
+    <div class="more-works__item__group">
+        <img src="./src/assets/images/<%= title.toLowerCase() %>.svg" alt="Dribbble icon" class="more-works__item__icon">
+        <div class="more-works__item__count"><span><%= count %></span></div>
+        <div class="more-works__item__type"><span><%= type %></span></div>
+        <div class="arrow-pointer arrow-pointer__45 more-works__item__arrow"></div>
+    </div>
+    <div class="more-works__item__title stroke-hover-ch__white">
+        <span><%= title.toLowerCase() %></span>
+    </div>
+    <a href="<%= href %>" target="_blank" rel="noopener" class="more-works__item__link"></a>
+</div>
