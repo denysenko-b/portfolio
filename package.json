@@ -12,5 +12,8 @@
     "sass": "^1.38.2",
     "vite": "^2.5.1",
     "vite-plugin-html": "^2.1.0"
+  },
+  "dependencies": {
+    "gsap": "^3.7.1"
   }
 }
