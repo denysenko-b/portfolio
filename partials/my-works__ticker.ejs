@@ -1,0 +1,38 @@
+<%
+    var repeatCount = 10;
+    var reverse = reverse || false;
+
+    var block = images.map(({src, alt}, id) => {
+        const odd = id % 2 !== 0;
+
+        return `
+    <div class="my-works__item__ticker__title text stroke-hover-ch__black">
+        <span>${title}</span>
+    </div>
+    <div class="my-works__item__ticker__icon ${odd ? 'my-works__item__ticker__icon__2' : ''}">
+        <img src="./src/assets/images/my-works/${src}" alt="${alt}" />
+    </div>
+    `
+    })
+
+    var tickerBody = [];
+
+    for (let i = 0; i < repeatCount; i++) tickerBody.push(block);
+
+    tickerBody = tickerBody.flat(Infinity).join('');
+%>
+
+<div class="my-works__item my-works__<%= title.toLowerCase().split(' ').join('-') %>">
+    <div class="my-works__item__container stroke-hover">
+        <div class="my-works__item__ticker <%= reverse ? 'reverse' : '' %>">
+            <div class="my-works__item__ticker__element my-works__item__ticker__main">
+                <%- tickerBody %>
+                <a href="<%= href %>" target="_blank" rel="noopener"></a>
+            </div>
+            <div class="my-works__item__ticker__element my-works__item__ticker__ghost">
+                <%- tickerBody %>
+                <a href="<%= href %>" target="_blank" rel="noopener"></a>
+            </div>
+        </div>
+    </div>
+</div>
