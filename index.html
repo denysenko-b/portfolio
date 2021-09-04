@@ -5,11 +5,14 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>Portfolio</title>
+        <%- include('/social', {...social}) %>
+
+        <title><%= title %></title>
+        <meta name="description" content="">
     </head>
     <body>
         <main>
-            <%- include('/ticker.ejs', {items: ['UI/UX Designer', 'Mobile app designer', 'Web designer', 'Product Designer'], classes: {container: 'home__ticker'}}) %>
+            <%- include('/ticker', {items: ['UI/UX Designer', 'Mobile app designer', 'Web designer', 'Product Designer'], classes: {container: 'home__ticker'}, reverse: true}) %>
             <section class="home">
                 <div class="home__header">
                     <div class="logo">
@@ -22,15 +25,22 @@
                     </div>
 
                     <div class="email">
+                        <!--  target="_blank" -->
                         <a href="mailto:<%= email %>"><%= email %></a>
                     </div>
                 </div>
                 <h1 class="home__title">
                     <span>
-                        I create <span class="set-text"><i>mobile app</i><i>Websites</i></span>
+                        <span>
+                            I create <span class="set-text"><i>mobile app</i><i>Websites</i></span>
+                        </span>
                     </span>
-                    <span> that your </span>
-                    <span> customers love </span>
+                    <span>
+                        <span> that your </span>
+                    </span>
+                    <span>
+                        <span> customers love </span>
+                    </span>
                 </h1>
                 <div class="home__about">
                     <p>
@@ -39,33 +49,33 @@
                 </div>
                 <button class="arrow-pointer" id="home__scroll-down"></button>
             </section>
-            <%- include('/ticker.ejs', {items: ['about me'], classes: {container: 'about__ticker'}}) %>
+            <%- include('/ticker', {items: ['about me'], classes: {container: 'about__ticker'}}) %>
             <section class="about">
                 <div class="about__hello about__text">
                     <p>
-                        HELLO! I am SergeY Denisenko. Product designer from Ukraine with 3+ years of experience.
+                        HELLO! I am Sergey Denisenko. Product designer from Ukraine with 3+ years of experience.
                     </p>
                 </div>
                 <div class="about__currently about__text">
                     <p>
-                        currently, I'm working at halo lab, creating different digital products and design systems for them.
+                        currently, I'm working at <a href="<%= links.haloLab %>" target="_blank" rel="noopener"><strong>halo lab</strong></a>, creating different digital products and design systems for them.
                     </p>
                 </div>
                 <div class="about__hobbies about__text">
                     <p>
-                        I am a curious person who is passionate about a design, Games, anime and MUSIC. I create design in a constant state of flow, listening to music and not being distracted by the outside world.
+                        I am a curious person who is passionate about a <a href="<%= links.design %>" target="_blank" rel="noopener"><strong>design</strong></a>, <a href="<%= links.games %>" target="_blank" rel="noopener"><strong>Games</strong></a>, <a href="<%= links.anime %>" target="_blank" rel="noopener"><strong>anime</strong></a> and <a href="<%= links.music %>" target="_blank" rel="noopener"><strong>MUSIC</strong></a>. I create design in a constant state of flow, listening to music and not being distracted by the outside world.
                     </p>
                 </div>
             </section>
             <%
                 var characteristics__keys = Object.keys(characteristics);
             %>
-            <%- include('/ticker.ejs', {items: characteristics__keys, classes: {container: 'characteristics__ticker'}}) %>
+            <%- include('/ticker', {items: characteristics__keys, classes: {container: 'characteristics__ticker'}}) %>
             <section class="characteristics">
                 <% characteristics__keys.forEach((key) => { %>
                     <div class="characteristics__<%= key %> characteristics__key">
                         <div class="arrow-pointer arrow-pointer__right"></div>
-                        <h2><%= key %></h2>
+                        <h2><span><%= key %></span></h2>
                         <ul>
                             <% characteristics[key].forEach((item) => { %>
                                 <li>
@@ -76,13 +86,18 @@
                     </div>
                 <% }) %>
             </section>
-            <%- include('/ticker.ejs', {items: ['My works'], classes: {container: 'my-works__ticker'}}) %>
+            <%- include('/ticker', {items: ['My works'], classes: {container: 'my-works__ticker'}}) %>
             <section class="my-works">
-
+                <%- include('/my-works__ticker', {title: 'Sport Club', images: [{src: 'sport-club/1.png', alt: 'First Image'}, {src: 'sport-club/1.png', alt: 'First Image'}], href: 'https://projects.invisionapp.com/share/9M10FID22UFQ#/screens/446885111_SportClub'}) %>
+                <%- include('/my-works__ticker', {title: 'MediaCatalog', images: [{src: 'sport-club/1.png', alt: 'First Image'}, {src: 'sport-club/1.png', alt: 'First Image'}], reverse: true, href: 'https://projects.invisionapp.com/share/9M10FID22UFQ#/screens/446885110_MediaCatalog'}) %>
+                <%- include('/my-works__ticker', {title: 'Coursephone', images: [{src: 'sport-club/1.png', alt: 'First Image'}, {src: 'sport-club/1.png', alt: 'First Image'}], href: 'https://projects.invisionapp.com/share/9M10FID22UFQ#/screens/446885109_CoursePhone'}) %>
+                <%- include('/my-works__ticker', {title: 'WaterFilter', images: [{src: 'sport-club/1.png', alt: 'First Image'}, {src: 'sport-club/1.png', alt: 'First Image'}], reverse: true, href: 'https://projects.invisionapp.com/share/9M10FID22UFQ#/screens/446885112_WaterFilter'}) %>
             </section>
-            <%- include('/ticker.ejs', {items: ['More work'], classes: {container: 'more-works__ticker'}}) %>
+            <%- include('/ticker', {items: ['More work'], classes: {container: 'more-works__ticker'}}) %>
             <section class="more-works">
-
+                <%- include('/more-works__item', {title: "Dribbble", href: links.dribbble, count: 10}) %>
+                <%- include('/more-works__item', {title: "Behance", href: links.behance, count: 5}) %>
+                <%- include('/more-works__item', {title: "Instagram", href: links.instagram, count: 20, type: 'posts'}) %>
             </section>
         </main>
         <footer>
@@ -93,11 +108,11 @@
                 <span>
                     Get in touch with me at
                 </span>
-                <span class="stroke-hover-ch">
+                <!-- target="_blank" -->
+                <a class="stroke-hover" href="mailto:<%= email %>">
                     <span class="arrow-pointer arrow-pointer__black arrow-pointer__45"></span>
-                    <i><%= email %></i>
-                    <a href="mailto:<%= email %>"></a>
-                </span>
+                    <i class="stroke-hover-ch__black"><%= email %></i>
+                </a>
             </p>
         </footer>
 
