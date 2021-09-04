@@ -1,5 +1,143 @@
+
 .my-works {
+    padding: var(--margin-top) 0;
     &__ticker {
         transform: rotate(1deg);
+    }
+
+    &__item {
+        --animation-duration: 100s;
+        $icon-size: 6rem;
+        $icon-scale: 1.3;
+        background-color: $yellow;
+
+        margin-bottom: 7rem;
+
+        will-change: transform;
+        position: relative;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &__container {
+        }
+
+        &__ticker {
+            font-size: 3rem;
+            position: relative;
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+
+            &__element {
+                display: flex;
+                white-space: nowrap;
+                will-change: transform;
+
+                align-items: center;
+            }
+
+            &__title {
+                color: $black;
+            }
+
+            &__icon {
+                margin: 0 $icon-size/1.5;
+                width: $icon-size;
+                height: $icon-size/4 * 3;
+
+                transform: scale($icon-scale) rotate(var(--icon-rotate));
+
+                background-color: var(--icon-bg);
+                box-shadow: -16px 24px 36px rgba(8, 28, 8, 0.1);
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &__2 {
+                transform: scale($icon-scale) rotate(var(--icon-rotate2));
+                }
+
+                // padding: 1.5rem 1rem;
+                img {
+                    max-height: 100%;
+                    width: auto;
+                    max-width: none;
+                }
+            }
+        }
+
+        .active {
+            .my-works__item__ticker {
+                &__main {
+                    animation: ticker__main var(--animation-duration)
+                        calc(-1 * var(--animation-duration)) linear infinite;
+                    animation-direction: var(--anim-dir);
+                }
+
+                &__ghost {
+                    animation: ticker__ghost var(--animation-duration)
+                        calc(-0.5 * var(--animation-duration)) linear infinite;
+                    animation-direction: var(--anim-dir);
+                }
+            }
+        }
+
+        .reverse {
+            .my-works__item__ticker {
+                &__main {
+                    animation-direction: reverse;
+                }
+
+                &__ghost {
+                    animation-direction: reverse;
+                }
+            }
+        }
+
+        a {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+    &__sport-club {
+        // --anim-dir: reverse;
+        background: #eea880;
+        transform: rotate(-1deg);
+        --icon-bg: #f1cab9;
+        --icon-rotate: -21deg;
+        --icon-rotate2: -15deg;
+    }
+
+    &__mediacatalog {
+        background: #84d0e8;
+        transform: rotate(1deg);
+        --icon-bg: #2c476a;
+        --icon-rotate: -6deg;
+        --icon-rotate2: 19deg;
+    }
+
+    &__coursephone {
+        background: #ffcd92;
+        transform: rotate(-2deg);
+        --icon-bg: #fff8b6;
+        --icon-rotate: -15deg;
+        --icon-rotate2: -22deg;
+    }
+
+    &__waterfilter {
+        background: #84e8b2;
+        transform: rotate(1deg);
+        --icon-bg: #398580;
+        --icon-rotate: -19deg;
+        --icon-rotate2: -11deg;
     }
 }
