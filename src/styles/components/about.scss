@@ -23,7 +23,7 @@
     }
 
     &__hobbies {
-        width: calc(100% - #{$left-offset});
+        width: calc(100% - var(--left-offset));
         margin-bottom: 0;
     }
 }

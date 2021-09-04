@@ -1,6 +1,6 @@
 .characteristics {
     $star-size: 0.75em;
-    padding: $margin-top 0;
+    padding: var(--margin-top) 0;
 
     &__ticker {
         transform: rotate(-1deg);
@@ -8,18 +8,22 @@
 
     &__key {
         display: grid;
-        grid-template-columns: 1fr 1fr 2fr;
+        grid-template-columns: 2fr 3fr 5fr;
 
         margin-bottom: 3rem;
 
         .arrow-pointer {
             margin-top: 0.5rem;
-            margin-left: $margin-left;
+            margin-left: var(--margin-left);
         }
 
         h2 {
             line-height: 100%;
-            // position: absolute;
+            margin-left: var(--margin-left);
+
+            & > span {
+                display: block;
+            }
         }
 
         &:last-child {
@@ -34,14 +38,9 @@
                 content: "";
                 margin-right: 1rem;
 
-                display: block;
-
-                width: $star-size;
-                height: $star-size;
-
-                background-image: url(../assets/images/star-yellow.svg);
                 margin-top: 0.1rem;
-                background-size: contain;
+
+                @include use-star-icon($yellow, $star-size);
             }
         }
     }

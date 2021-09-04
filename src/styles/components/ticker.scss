@@ -1,5 +1,5 @@
 .ticker {
-    --animation-duration: 60s;
+    --animation-duration: 10s;
     font-size: 0.375rem;
     position: relative;
     width: 100%;
@@ -11,9 +11,8 @@
     display: flex;
     align-items: center;
 
-
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+    margin-top: var(--ticker-offset);
+    margin-bottom: var(--ticker-offset);
 
     &:first-child,
     &:last-child {
@@ -34,16 +33,12 @@
 
         margin-right: 2em;
 
+        will-change: transform;
+
         &::after {
             content: "";
             margin-left: 2em;
-
-            display: block;
-
-            width: 1em;
-            height: 1em;
-
-            background-image: url(../assets/images/star.svg);
+            @include use-star-icon;
         }
     }
 
@@ -69,7 +64,41 @@
         animation: ticker__ghost var(--animation-duration)
             calc(-0.5 * var(--animation-duration)) linear infinite;
     }
+
+    // .reverse {
+    //     .ticker {
+    //         &__main {
+    //             // animation-name: ticker__main__reverse;
+    //             transform-origin: left;
+    //             animation-direction: reverse;
+    //         }
+
+    //         &__ghost {
+    //             transform-origin: left;
+    //             // animation-name: ticker__ghost__reverse;
+    //             animation-direction: reverse;
+    //         }
+    //     }
+    // }
 }
+
+// @keyframes ticker__main__reverse {
+//     0% {
+//         transform: translateX(0%);
+//     }
+//     100% {
+//         transform: translateX(-200%);
+//     }
+// }
+
+// @keyframes ticker__ghost__reverse {
+//     0% {
+//         transform: translateX(-100%);
+//     }
+//     100% {
+//         transform: translateX(-300%);
+//     }
+// }
 
 @keyframes ticker__main {
     0% {

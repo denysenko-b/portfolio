@@ -1,5 +1,4 @@
 .home {
-    --title-offset: #{$left-offset};
     --textset-duration: 10s;
 
     position: relative;
@@ -29,13 +28,19 @@
 
             margin-bottom: 0.25rem;
 
+            overflow-y: hidden;
+
             &:nth-child(2) {
                 margin-left: 50%;
             }
 
             &:last-child {
                 margin-bottom: 0;
-                margin-left: var(--title-offset);
+                margin-left: var(--left-offset);
+            }
+
+            &>span {
+                display: inline-block;
             }
         }
 
@@ -87,7 +92,7 @@
         width: 25%;
 
         margin-top: -9.9rem;
-        margin-left: var(--title-offset);
+        margin-left: var(--left-offset);
         opacity: .9;
     }
 

@@ -5,7 +5,8 @@ a,
 button,
 .big-text,
 p,
-li {
+li,
+.text {
     line-height: 130%;
     text-transform: uppercase;
     color: $white;
@@ -25,7 +26,8 @@ h2,
 h1,
 h2,
 p,
-li {
+li,
+.text {
     font-family: "Druk Cyr";
     letter-spacing: 0.04em;
     font-weight: 900;
@@ -41,31 +43,5 @@ i {
 }
 
 section {
-    padding: $margin-top $margin-left;
-}
-
-.stroke-hover {
-    &:hover {
-        -webkit-text-stroke: 2px $black;
-        color: transparent;
-    }
-}
-
-.stroke-hover-ch {
-    &:hover {
-        & > span,
-        & > i,
-        & > strong {
-            -webkit-text-stroke: 2px $black;
-            color: transparent;
-        }
-
-        & > .arrow-pointer {
-            background-color: $yellow;
-            border: 2px solid $black;
-            &::after {
-                background-image: url(../assets/images/arrow.svg);
-            }
-        }
-    }
+    padding: var(--margin-top) var(--margin-left);
 }

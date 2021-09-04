@@ -1,6 +1,7 @@
 footer {
     background-color: $yellow;
     padding: 4rem 2.25rem;
+    margin-top: var(--ticker-offset);
 
     p {
         color: $black;
@@ -13,27 +14,18 @@ footer {
             color: $black;
         }
 
-        & > span {
+        & > * {
             margin-bottom: 0.25rem;
 
             &:last-child {
                 margin-bottom: 0;
                 display: flex;
                 align-items: center;
-                position: relative;
-
-                a {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                }
             }
 
             &:first-child,
             &:last-child {
-                width: calc(100% - #{$left-offset});
+                width: calc(100% - var(--left-offset));
                 align-self: flex-end;
             }
         }
