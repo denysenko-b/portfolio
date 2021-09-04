@@ -9,7 +9,7 @@
     </head>
     <body>
         <main>
-            <%- include('/ticker.ejs', {items: ['Привет', 'Мир']}) %>
+            <%- include('/ticker.ejs', {items: ['UI/UX Designer', 'Mobile app designer', 'Web designer', 'Product Designer'], classes: {container: 'home__ticker'}}) %>
             <section class="home">
                 <div class="home__header">
                     <div class="logo">
@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="email">
-                        <a href="maito:<%= email %>"><%= email %></a>
+                        <a href="mailto:<%= email %>"><%= email %></a>
                     </div>
                 </div>
                 <h1 class="home__title">
@@ -37,7 +37,7 @@
                         My name is Sergey. I help businesses and startups to create any digital products
                     </p>
                 </div>
-                <button class="down"></button>
+                <button class="arrow-pointer" id="home__scroll-down"></button>
             </section>
             <%- include('/ticker.ejs', {items: ['about me'], classes: {container: 'about__ticker'}}) %>
             <section class="about">
@@ -64,7 +64,7 @@
             <section class="characteristics">
                 <% characteristics__keys.forEach((key) => { %>
                     <div class="characteristics__<%= key %> characteristics__key">
-                        <button class="right"></button>
+                        <div class="arrow-pointer arrow-pointer__right"></div>
                         <h2><%= key %></h2>
                         <ul>
                             <% characteristics[key].forEach((item) => { %>
@@ -76,8 +76,31 @@
                     </div>
                 <% }) %>
             </section>
-        </main>
+            <%- include('/ticker.ejs', {items: ['My works'], classes: {container: 'my-works__ticker'}}) %>
+            <section class="my-works">
 
-        <script type="module" src="src/index.js"></script>
+            </section>
+            <%- include('/ticker.ejs', {items: ['More work'], classes: {container: 'more-works__ticker'}}) %>
+            <section class="more-works">
+
+            </section>
+        </main>
+        <footer>
+            <p>
+                <span>
+                    Want to learn more?
+                </span>
+                <span>
+                    Get in touch with me at
+                </span>
+                <span class="stroke-hover-ch">
+                    <span class="arrow-pointer arrow-pointer__black arrow-pointer__45"></span>
+                    <i><%= email %></i>
+                    <a href="mailto:<%= email %>"></a>
+                </span>
+            </p>
+        </footer>
+
+        <script type="module" src="./src/index.js"></script>
     </body>
 </html>
