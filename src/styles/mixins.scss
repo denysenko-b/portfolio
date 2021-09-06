@@ -1,4 +1,4 @@
-@mixin use-star-icon($color: $black, $size: 1em) {
+@mixin use-star-icon($color: var(--black), $size: 1em) {
     display: block;
 
     width: $size;
@@ -7,4 +7,6 @@
     background-color: $color;
     mask: url("../assets/images/star.svg");
     mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
 }

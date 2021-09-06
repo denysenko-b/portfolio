@@ -1,0 +1,82 @@
+.loader {
+    font-size: 13.4vh;
+
+    position: fixed;
+    left: 0;
+    // top: 0;
+    right: 0;
+    // bottom: 0;
+
+    height: 100vh;
+
+    z-index: 99;
+
+    background-color: var(--yellow);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    .text {
+        width: 100%;
+        font-style: italic;
+        font-weight: 900;
+        color: transparent;
+        -webkit-text-stroke: 2px var(--black);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+
+            @include use-star-icon;
+        }
+
+        span {
+            display: inline-block;
+            position: relative;
+
+            $mini-padding: 0.1em;
+
+            padding-left: $mini-padding;
+            padding-right: $mini-padding;
+
+            &::before {
+                content: attr(data-text);
+                padding-left: $mini-padding;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                color: var(--black);
+                overflow-x: hidden;
+
+                width: 5%;
+                transition: 1s;
+
+                white-space: nowrap;
+            }
+
+            &:hover {
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &.loaded {
+        transition: all ease 0.5s;
+    }
+}
+
+.preload {
+    overflow: hidden;
+}

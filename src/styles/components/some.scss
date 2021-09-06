@@ -9,18 +9,18 @@ li,
 .text {
     line-height: 130%;
     text-transform: uppercase;
-    color: $white;
+    color: var(--white);
     font-style: normal;
 }
 
 h1 {
-    font-size: 5.1875rem;
+    font-size: var(--title-font-size);
     line-height: 100%;
 }
 
 h2,
 .big-text {
-    font-size: 3rem;
+    font-size: var(--big-font-size);
 }
 
 h1,
@@ -39,9 +39,9 @@ li {
 
 strong,
 i {
-    color: $yellow;
+    color: var(--yellow);
 }
 
 section {
-    padding: var(--margin-top) var(--margin-left);
+    padding: 0 var(--section-offset);
 }

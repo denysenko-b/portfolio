@@ -48,7 +48,7 @@
         }
 
         &__type {
-            font-size: 0.375rem;
+            font-size: var(--tiny-font-size);
             opacity: .8;
             grid-row: 2/3;
         }
@@ -58,12 +58,22 @@
             grid-row: 1/3;
         }
 
+        &__icon {
+            height: 100%;
+            width: 100%;
+
+            // img {
+            //     height: 100%;
+            //     width: 100%;
+            // }
+        }
+
         &__arrow {
             margin-left: 1.7rem;
         }
 
         &__title {
-            font-size: 3rem;
+            font-size: var(--big-font-size);
         }
 
         &__link {

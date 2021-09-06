@@ -1,21 +1,31 @@
 footer {
-    background-color: $yellow;
+    background-color: var(--yellow);
     padding: 4rem 2.25rem;
     margin-top: var(--ticker-offset);
 
     p {
-        color: $black;
-        font-size: 3rem;
+        color: var(--black);
+        font-size: var(--big-font-size);
 
         display: flex;
         flex-direction: column;
 
+        a {
+            display: inline-flex;
+            align-items: center;
+        }
+
         i {
-            color: $black;
+            color: var(--black);
+        }
+
+        span {
+            display: inline-block;
         }
 
         & > * {
-            margin-bottom: 0.25rem;
+            overflow: hidden;
+            margin-bottom: var(--text-block-offset);
 
             &:last-child {
                 margin-bottom: 0;
@@ -32,7 +42,6 @@ footer {
     }
 
     .arrow-pointer {
-        margin-top: 0.25rem;
         width: 0.75em;
         height: 0.75em;
         margin-right: 1rem;

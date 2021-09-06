@@ -6,11 +6,13 @@
         const odd = id % 2 !== 0;
 
         return `
-    <div class="my-works__item__ticker__title text stroke-hover-ch__black">
-        <span>${title}</span>
-    </div>
-    <div class="my-works__item__ticker__icon ${odd ? 'my-works__item__ticker__icon__2' : ''}">
-        <img src="./src/assets/images/my-works/${src}" alt="${alt}" />
+    <div class="my-works__item__ticker__group">
+        <div class="my-works__item__ticker__title text stroke-hover-ch__black">
+            <span>${title}</span>
+        </div>
+        <div class="my-works__item__ticker__icon ${odd ? 'my-works__item__ticker__icon__2' : ''}">
+            <img src="./src/assets/images/my-works/${src}" alt="${alt}" />
+        </div>
     </div>
     `
     })
@@ -27,11 +29,11 @@
         <div class="my-works__item__ticker <%= reverse ? 'reverse' : '' %>">
             <div class="my-works__item__ticker__element my-works__item__ticker__main">
                 <%- tickerBody %>
-                <a href="<%= href %>" target="_blank" rel="noopener"></a>
+                <a href="<%= href %>" target="_blank" rel="noopener" aria-label="<%= title %>"></a>
             </div>
             <div class="my-works__item__ticker__element my-works__item__ticker__ghost">
                 <%- tickerBody %>
-                <a href="<%= href %>" target="_blank" rel="noopener"></a>
+                <a href="<%= href %>" target="_blank" rel="noopener" aria-label="<%= title %>"></a>
             </div>
         </div>
     </div>

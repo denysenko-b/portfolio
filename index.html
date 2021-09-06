@@ -7,12 +7,25 @@
 
         <%- include('/social', {...social}) %>
 
+
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#dfff80">
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#001500">
+
         <title><%= title %></title>
-        <meta name="description" content="">
+        <meta name="description" content="<%= description %>">
     </head>
-    <body>
+    <body class="preload">
+        <!-- <div class="loader">
+            <div class="text">
+                <span data-text="Product Designer">
+                    Product Designer
+                </span>
+            </div>
+
+        </div> -->
+
         <main>
-            <%- include('/ticker', {items: ['UI/UX Designer', 'Mobile app designer', 'Web designer', 'Product Designer'], classes: {container: 'home__ticker'}, reverse: true}) %>
+            <%- include('/ticker', {items: ['UI/UX Designer', 'Product Designer', 'Mobile app designer', 'Web designer'], classes: {container: 'home__ticker'}, reverse: true}) %>
             <section class="home">
                 <div class="home__header">
                     <div class="logo">
@@ -47,7 +60,7 @@
                         My name is Sergey. I help businesses and startups to create any digital products
                     </p>
                 </div>
-                <button class="arrow-pointer" id="home__scroll-down"></button>
+                <button class="arrow-pointer" id="home__scroll-down" aria-label="Scroll down"></button>
             </section>
             <%- include('/ticker', {items: ['about me'], classes: {container: 'about__ticker'}}) %>
             <section class="about">
@@ -103,13 +116,15 @@
         <footer>
             <p>
                 <span>
-                    Want to learn more?
+                    <span>
+                        Want to learn more?
+                    </span>
                 </span>
                 <span>
-                    Get in touch with me at
+                    <span>Get in touch with me at</span>
                 </span>
                 <!-- target="_blank" -->
-                <a class="stroke-hover" href="mailto:<%= email %>">
+                <a class="stroke-hover" href="mailto:<%= email %>" aria-label="My email">
                     <span class="arrow-pointer arrow-pointer__black arrow-pointer__45"></span>
                     <i class="stroke-hover-ch__black"><%= email %></i>
                 </a>

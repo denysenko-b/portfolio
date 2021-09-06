@@ -1,6 +1,6 @@
 .characteristics {
     $star-size: 0.75em;
-    padding: var(--margin-top) 0;
+    padding: 0;
 
     &__ticker {
         transform: rotate(-1deg);
@@ -14,12 +14,12 @@
 
         .arrow-pointer {
             margin-top: 0.5rem;
-            margin-left: var(--margin-left);
+            margin-left: var(--section-offset);
         }
 
         h2 {
             line-height: 100%;
-            margin-left: var(--margin-left);
+            margin-left: var(--section-offset);
 
             & > span {
                 display: block;
@@ -40,7 +40,7 @@
 
                 margin-top: 0.1rem;
 
-                @include use-star-icon($yellow, $star-size);
+                @include use-star-icon(var(--yellow), $star-size);
             }
         }
     }

@@ -1,5 +1,8 @@
-@import './variables/all.scss';
+@use 'sass:math';
+
+@import './variables.scss';
 @import './fonts/all.scss';
 @import './reset.scss';
 @import './mixins.scss';
 @import './components/all.scss';
+@import './mobile/index.scss';

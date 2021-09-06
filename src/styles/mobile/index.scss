@@ -1,0 +1,163 @@
+@media (max-width: 600px) {
+// html[orientation=portrait] {
+    :root {
+        font-size: 4.8vw; //18px
+        --left-offset: 0;
+        --section-offset: 0.9rem;
+
+        --title-font-size: 2.7rem;
+        --big-font-size: 2.22rem;
+        --tiny-font-size: 0.7rem;
+        --home-link-font-size: 0.8rem;
+        --text-block-offset: 0.45rem;
+
+        --ticker-offset: 3.5rem;
+
+        // --stroke-width: 2px;
+        // --arrow-pointer-border-width: 2px;
+
+        --logo-size: 1.8rem;
+    }
+
+    .home {
+        &__title {
+            margin-top: 5.6rem;
+
+            & > span {
+                &:nth-child(2) {
+                    margin-left: 0;
+                }
+
+                &:last-child {
+                    margin-left: 2.9rem;
+                }
+            }
+        }
+
+        &__about {
+            margin-top: 1.33rem;
+            max-width: none;
+        }
+
+        .arrow-pointer {
+            margin-top: -6.25rem;
+            margin-bottom: 11.6rem;
+        }
+    }
+
+    .about {
+        &__text {
+            width: 100%;
+        }
+    }
+
+    .characteristics {
+        padding: 0 var(--section-offset);
+
+        &__key {
+            display: block;
+
+            .arrow-pointer {
+                display: none;
+            }
+
+            h2 {
+                margin-left: 0;
+                margin-bottom: 0.9rem;
+            }
+        }
+    }
+
+    .my-works {
+        &__item {
+            margin-bottom: 4.6rem;
+            --icon-scale: 1.5;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &:nth-child(even) {
+                .my-works {
+                    &__item {
+                        &__ticker {
+                            &__group {
+                                flex-direction: row-reverse;
+                            }
+
+                            &__icon {
+                                right: auto;
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__ticker {
+
+                &__group {
+                    width: 100vw;
+                    padding: 0 var(--section-offset);
+
+                    &:first-child {
+
+                        position: relative;
+
+                        .my-works__item__ticker {
+
+                            // &__group {
+
+                            // }
+
+                            &__icon {
+                                margin: 0;
+                                position: absolute;
+                                right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .more-works {
+        &__item {
+            width: 100%;
+
+            &__count {
+                font-size: 1.1rem;
+            }
+
+            &__type {
+                font-size: 0.56rem;
+            }
+
+            &__arrow {
+                margin-left: 0;
+            }
+        }
+    }
+
+    footer {
+        padding: 3.1rem var(--section-offset);
+
+        p {
+            & > * {
+                align-self: flex-start !important;
+            }
+
+            a {
+                color: inherit;
+
+                &:after {
+                    content: "email";
+                }
+                i {
+                    display: none;
+                }
+            }
+        }
+    }
+}

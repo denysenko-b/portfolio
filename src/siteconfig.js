@@ -1,7 +1,7 @@
-const seo = {
-    title: 'Portfolio',
-    description: 'Description',
-    keywords: ["Portfolio", "asd"]
+export const seo = {
+    title: 'Sergey Denisenko Portfolio',
+    description: 'Product Designer, UI/UX Designer, Mobile App Designer & Web Designer',
+    // keywords: ["Portfolio", "asd"]
 }
 export const DOMAIN = 'localhost:3000';
 export const URL = `http://${DOMAIN}`;
@@ -35,8 +35,8 @@ export const social =  {
     description: seo.description,
     image: {
         url: `${URL}/social.jpg`,
-        height: 1200,
-        width: 600,
+        height: 1600,
+        width: 800,
         alt: seo.description
     }
 }
