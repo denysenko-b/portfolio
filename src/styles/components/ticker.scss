@@ -1,7 +1,7 @@
 .ticker {
     --animation-duration: 60s;
     font-size: var(--tiny-font-size);
-    color: var(--black);
+    color: $black;
     font-weight: bold;
 
     position: relative;
@@ -9,7 +9,7 @@
 
     height: 4em;
 
-    background-color: var(--yellow);
+    background-color: $yellow;
 
     display: flex;
     align-items: center;
@@ -26,7 +26,7 @@
     &__item {
         font-family: "Montserrat";
         font-size: 1em;
-        line-height: 160%;
+        line-height: 100%;
         text-transform: uppercase;
 
         display: flex;
@@ -112,7 +112,7 @@
 
 @keyframes ticker__ghost {
     0% {
-        transform: translateX(0);
+        transform: translateX(0%);
     }
     100% {
         transform: translateX(-200%);

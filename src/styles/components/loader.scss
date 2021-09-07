@@ -1,82 +1,91 @@
-.loader {
-    font-size: 13.4vh;
+// #loader {
+//     --percent: 0%;
 
-    position: fixed;
-    left: 0;
-    // top: 0;
-    right: 0;
-    // bottom: 0;
+//     &.load {
 
-    height: 100vh;
 
-    z-index: 99;
+//         .ticker {
+//             &__element {
+//                 animation-play-state: paused;
+//             }
+//         }
 
-    background-color: var(--yellow);
+//         height: 100vh;
+//         font-size: 13.4vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+//         .loader__title {
+//             // display: block;
+//             width: 100vw;
+//             font-style: italic;
+//             font-weight: 900;
+//             color: transparent;
+//             -webkit-text-stroke: 2px $black;
 
-    flex-direction: column;
+//             justify-content: space-evenly;
 
-    .text {
-        width: 100%;
-        font-style: italic;
-        font-weight: 900;
-        color: transparent;
-        -webkit-text-stroke: 2px var(--black);
+//             &:before {
+//                 content: "";
+//                 display: block;
 
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
+//                 @include use-star-icon;
+//             }
 
-        &::before,
-        &::after {
-            content: "";
-            display: block;
+//             &:after {
+//                 margin-left: 0;
+//             }
 
-            @include use-star-icon;
-        }
+//             span {
+//                 $mini-padding: 0.1em;
 
-        span {
-            display: inline-block;
-            position: relative;
+//                 padding-left: $mini-padding;
+//                 padding-right: $mini-padding;
 
-            $mini-padding: 0.1em;
+//                 display: inline-block;
+//                 position: relative;
 
-            padding-left: $mini-padding;
-            padding-right: $mini-padding;
+//                 &::before {
+//                     content: attr(data-text);
+//                     padding-left: $mini-padding;
+//                     display: block;
+//                     position: absolute;
+//                     top: 0;
+//                     left: 0;
+//                     // height: 100%;
 
-            &::before {
-                content: attr(data-text);
-                padding-left: $mini-padding;
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
+//                     color: $black;
+//                     overflow: hidden;
 
-                color: var(--black);
-                overflow-x: hidden;
+//                     width: var(--percent);
 
-                width: 5%;
-                transition: 1s;
+//                     white-space: nowrap;
+//                 }
 
-                white-space: nowrap;
-            }
+//                 &:hover {
+//                     &::before {
+//                         width: 100%;
+//                     }
+//                 }
+//             }
+//         }
+//     }
 
-            &:hover {
-                &::before {
-                    width: 100%;
-                }
-            }
-        }
-    }
+//     &.anim {
+//         .loader__title {
+//             span {
+//                 &::before {
+//                     transition: width 0.2s;
+//                 }
+//             }
+//         }
 
-    &.loaded {
-        transition: all ease 0.5s;
-    }
-}
+//         .loader__title {
+//             transition: all ease .2s;
+//         }
 
-.preload {
-    overflow: hidden;
-}
+//         transition: height ease 0.3s;
+//     }
+// }
+
+// .preload {
+//     overflow: hidden;
+// }

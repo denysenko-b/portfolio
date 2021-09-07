@@ -1,4 +1,4 @@
-@mixin use-star-icon($color: var(--black), $size: 1em) {
+@mixin use-star-icon($color: $black, $size: 1em) {
     display: block;
 
     width: $size;

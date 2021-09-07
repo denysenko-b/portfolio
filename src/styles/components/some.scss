@@ -9,7 +9,7 @@ li,
 .text {
     line-height: 130%;
     text-transform: uppercase;
-    color: var(--white);
+    color: $white;
     font-style: normal;
 }
 
@@ -39,7 +39,7 @@ li {
 
 strong,
 i {
-    color: var(--yellow);
+    color: $yellow;
 }
 
 section {

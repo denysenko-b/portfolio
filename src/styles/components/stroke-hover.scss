@@ -1,40 +1,40 @@
 .stroke-hover {
     // &:hover {
-    //     -webkit-text-stroke: 2px var(--black);
+    //     -webkit-text-stroke: 2px $black;
     //     color: transparent;
     // }
 
     &:hover {
         .stroke-hover-ch {
             &__white {
-                -webkit-text-stroke: var(--stroke-width) var(--white);
+                -webkit-text-stroke: var(--stroke-width) $white;
                 color: transparent;
             }
 
             &__yellow {
-                -webkit-text-stroke: var(--stroke-width) var(--yellow);
+                -webkit-text-stroke: var(--stroke-width) $yellow;
                 color: transparent;
             }
 
             &__black {
-                -webkit-text-stroke: var(--stroke-width) var(--black);
+                -webkit-text-stroke: var(--stroke-width) $black;
                 color: transparent;
             }
         }
 
         .arrow-pointer {
             background-color: transparent;
-            border: var(--arrow-pointer-border-width) solid var(--yellow);
+            border: var(--arrow-pointer-border-width) solid $yellow;
 
             &::after {
-                background-color: var(--yellow);
+                background-color: $yellow;
             }
 
             &__black {
-                border-color: var(--black);
+                border-color: $black;
 
                 &:after {
-                    background-color: var(--black);
+                    background-color: $black;
                 }
             }
         }

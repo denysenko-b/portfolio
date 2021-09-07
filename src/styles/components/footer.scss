@@ -1,10 +1,10 @@
 footer {
-    background-color: var(--yellow);
+    background-color: $yellow;
     padding: 4rem 2.25rem;
     margin-top: var(--ticker-offset);
 
     p {
-        color: var(--black);
+        color: $black;
         font-size: var(--big-font-size);
 
         display: flex;
@@ -16,7 +16,7 @@ footer {
         }
 
         i {
-            color: var(--black);
+            color: $black;
         }
 
         span {

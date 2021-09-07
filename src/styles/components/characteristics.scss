@@ -40,7 +40,7 @@
 
                 margin-top: 0.1rem;
 
-                @include use-star-icon(var(--yellow), $star-size);
+                @include use-star-icon($yellow, $star-size);
             }
         }
     }

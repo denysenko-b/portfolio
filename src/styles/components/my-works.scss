@@ -8,7 +8,7 @@
         --animation-duration: 600s;
         $icon-size: 6rem;
         --icon-scale: 1.3;
-        background-color: var(--yellow);
+        background-color: $yellow;
 
         margin-bottom: 7rem;
 
@@ -44,7 +44,7 @@
             }
 
             &__title {
-                color: var(--black);
+                color: $black;
             }
 
             &__icon {
