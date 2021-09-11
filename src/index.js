@@ -25,13 +25,6 @@ window.istouch = "ontouchstart" in window;
 
 gsap.registerPlugin(ScrollTrigger);
 
-
-window.addEventListener("DOMContentLoaded", () => {
-    if (window._orientation === 'landscape') {
-        animate();
-    }
-})
-
 window.addEventListener("load", () => {
     const scrollDown = document.querySelector('.home .arrow-pointer');
     const aboutSection = document.querySelector('.about__ticker');
@@ -41,6 +34,11 @@ window.addEventListener("load", () => {
             behavior: 'smooth'
         })
     })
+    
+    
+    if (window._orientation === 'landscape') {
+        animate();
+    }
 });
 
 window.addEventListener('resize', () => {
