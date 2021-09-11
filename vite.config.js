@@ -24,7 +24,7 @@ export default defineConfig({
     //     }
     // }
     server: {
-        host: '192.168.43.208'
+        // host: '192.168.43.208'
     },
     build: {
         assetsInlineLimit: 0
