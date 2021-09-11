@@ -35,11 +35,12 @@ window.addEventListener("load", () => {
         })
     })
     
-    
-    if (window._orientation === 'landscape') {
-        animate();
-    }
 });
+
+    
+if (window._orientation === 'landscape') {
+    animate();
+}
 
 window.addEventListener('resize', () => {
     getScreenOrientation();
