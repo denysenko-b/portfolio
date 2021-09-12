@@ -1,6 +1,6 @@
 import "./styles/index.scss";
 import { gsap, ScrollTrigger } from "gsap/all";
-import animate from './animation';
+import animate from "./animation";
 
 const getScreenOrientation = async () => {
     const prevOrientation = window._orientation;
@@ -15,7 +15,9 @@ const getScreenOrientation = async () => {
     if (prevOrientation !== orientation) {
         document.documentElement.setAttribute("orientation", orientation);
         window._orientation = orientation;
-        window.dispatchEvent(new CustomEvent("setorientation", { detail: { orientation } }));
+        window.dispatchEvent(
+            new CustomEvent("setorientation", { detail: { orientation } })
+        );
     }
 };
 
@@ -26,22 +28,20 @@ window.istouch = "ontouchstart" in window;
 gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener("load", () => {
-    const scrollDown = document.querySelector('.home .arrow-pointer');
-    const aboutSection = document.querySelector('.about__ticker');
+    const scrollDown = document.querySelector(".home .arrow-pointer");
+    const aboutSection = document.querySelector(".about__ticker");
 
-    scrollDown.addEventListener('click', () => {
+    scrollDown.addEventListener("click", () => {
         aboutSection.scrollIntoView({
-            behavior: 'smooth'
-        })
-    })
-    
+            behavior: "smooth",
+        });
+    });
 });
 
-    
-if (window._orientation === 'landscape') {
+if (window._orientation === "landscape") {
     animate();
 }
 
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
     getScreenOrientation();
-})
+});
